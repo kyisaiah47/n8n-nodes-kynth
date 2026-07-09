@@ -18,7 +18,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-      - run: npm install
+      # n8n-workflow is types-only for this build; --ignore-scripts skips its
+      # transitive isolated-vm native compile (which breaks on hosted runners).
+      - run: npm install --ignore-scripts
       - run: npm run build
       - run: npm publish --provenance --access public
         env:

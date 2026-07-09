@@ -1,0 +1,47 @@
+{
+  "name": "n8n-nodes-kynth",
+  "version": "0.2.0",
+  "description": "Kynth Core for n8n — 39 finished-job AI endpoints: documents to JSON, extraction, triage, research, moderation, and more. Task-named pricing, one credit wallet.",
+  "keywords": [
+    "n8n-community-node-package",
+    "kynth",
+    "ai",
+    "document-parsing",
+    "invoice-ocr",
+    "extraction"
+  ],
+  "license": "MIT",
+  "homepage": "https://api.kynth.studio",
+  "author": {
+    "name": "Kynth Studios",
+    "email": "kyisaiah47@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyisaiah47/n8n-nodes-kynth.git"
+  },
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/KynthApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/KynthCore/KynthCore.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.70.0",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-kynth",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Kynth Core for n8n — 39 finished-job AI endpoints: documents to JSON, extraction, triage, research, moderation, and more. Task-named pricing, one credit wallet.",
   "keywords": [
     "n8n-community-node-package",
@@ -14,7 +14,8 @@
   "homepage": "https://api.kynth.studio",
   "author": {
     "name": "Kynth Studios",
-    "email": "kyisaiah47@gmail.com"
+    "email": "hello@kynth.studio",
+    "url": "https://kynth.studio"
   },
   "repository": {
     "type": "git",

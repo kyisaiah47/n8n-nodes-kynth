@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-kynth",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Kynth Core for n8n — 39 finished-job AI endpoints: documents to JSON, extraction, triage, research, moderation, and more. Task-named pricing, one credit wallet.",
   "keywords": [
     "n8n-community-node-package",

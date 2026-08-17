@@ -3,9 +3,16 @@
 // GENERATED from the API's own endpoint catalog (apps/api scripts/
 // generate-clients.ts), so the node can never drift from the live API.
 
-import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import type { Icon, INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { kynthNodeDescription } from './description';
 
 export class KynthCore implements INodeType {
+	// n8n's manual review (2026-08-17, v0.2.3) required this even though
+	// kynthNodeDescription already carries `icon: 'file:kynth.svg'` — the linter rule
+	// `@n8n/community-nodes/icon-validation` reads the CLASS, not the description it
+	// points at. The svg it names did not exist in the package at all until now, so the
+	// node also shipped iconless. Both halves are fixed together.
+	icon: Icon = 'file:kynth.svg';
+
 	description: INodeTypeDescription = kynthNodeDescription;
 }

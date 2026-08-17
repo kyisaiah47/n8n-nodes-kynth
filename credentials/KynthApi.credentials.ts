@@ -6,6 +6,7 @@ import type {
 	IAuthenticateGeneric,
 	ICredentialTestRequest,
 	ICredentialType,
+	Icon,
 	INodeProperties,
 } from 'n8n-workflow';
 
@@ -13,6 +14,14 @@ export class KynthApi implements ICredentialType {
 	name = 'kynthApi';
 
 	displayName = 'Kynth Core API';
+
+	// n8n's manual review (2026-08-17, v0.2.3) failed on exactly this line being absent:
+	// `@n8n/community-nodes/cred-class-field-icon-missing` — the credential class must
+	// declare its own icon as a TOP-LEVEL CLASS PROPERTY, not only inside a description
+	// object. `file:` resolves beside the compiled class, so credentials/kynth.svg is
+	// copied into dist/credentials by the build. Reproduce with
+	// `npx @n8n/scan-community-package@beta n8n-nodes-kynth`.
+	icon: Icon = 'file:kynth.svg';
 
 	documentationUrl = 'https://api.kynth.studio/docs';
 

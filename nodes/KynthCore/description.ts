@@ -1800,7 +1800,7 @@ export const kynthNodeDescription = {
 					"value": "email"
 				},
 				{
-					"name": "Sms",
+					"name": "SMS",
 					"value": "sms"
 				}
 			],

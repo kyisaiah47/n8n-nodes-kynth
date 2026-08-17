@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-kynth",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Kynth Core for n8n — 39 finished-job AI endpoints: documents to JSON, extraction, triage, research, moderation, and more. Task-named pricing, one credit wallet.",
   "keywords": [
     "n8n-community-node-package",
@@ -35,7 +35,9 @@
     ]
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp nodes/KynthCore/kynth.svg dist/nodes/KynthCore/ && cp credentials/kynth.svg dist/credentials/ && npm run icons:check",
+    "icons:check": "test -s dist/nodes/KynthCore/kynth.svg && test -s dist/credentials/kynth.svg || (echo '⛔ icon missing from dist — the node would publish iconless again (see the 2026-08-17 n8n manual review)' && exit 1)",
+    "lint:n8n": "npx --yes @n8n/node-cli@latest lint",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
